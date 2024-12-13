@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulaire de mot de passe</h1>
+    
+    <!-- Formulaire de saisie du mot de passe -->
+    <form id="passwordForm">
+        <label for="password">Entrez le mot de passe:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Soumettre">
+    </form>
+
+    <!-- Zone de contenu qui sera affichée si le mot de passe est correct -->
+    <div id="result" style="display: none;">
+        <h4>Bienjoué voici le flag, colle le dans mes DM</h4>
+        <h2>FLAG : F{UzNjdVIzZF9QNHNTdzByRA==}</h2>
+    </div>
+
+    <script>
+        // Mot de passe correct
+        const correctPassword = "3z4dm1n"; // Changez-le pour votre mot de passe souhaité
+
+        // Récupération du formulaire et de l'élément du mot de passe
+        const form = document.getElementById("passwordForm");
+        const passwordInput = document.getElementById("password");
+        const resultDiv = document.getElementById("result");
+
+        // Événement lors de la soumission du formulaire
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche la soumission du formulaire
+            
+            const enteredPassword = passwordInput.value; // Récupère le mot de passe entré par l'utilisateur
+            
+            // Vérifie si le mot de passe est correct
+            if (enteredPassword === correctPassword) {
+                resultDiv.style.display = "block"; // Affiche le message et le flag
+            } else {
+                alert("Mot de passe incorrect !"); // Message d'erreur si le mot de passe est incorrect
+            }
+        });
+    </script>
+</body>
+</html>
